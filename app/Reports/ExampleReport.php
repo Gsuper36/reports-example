@@ -12,10 +12,12 @@ class ExampleReport implements Report, JsonableReport, HtmlableReport, CsvableRe
 {
     private string $title = "Example report";
     private ExampleQuery $query;
+    private array $params;
 
-    public function __construct()
+    public function __construct(array $params)
     {
-        $this->query = new ExampleQuery();
+        $this->query  = new ExampleQuery();
+        $this->params = $params;
     }
 
     public function title(): string
@@ -25,7 +27,8 @@ class ExampleReport implements Report, JsonableReport, HtmlableReport, CsvableRe
 
     public function data(): array
     {
-        return $this->query->results()
+        return $this->query
+            ->results($this->params)
             ->toArray();
     }
 

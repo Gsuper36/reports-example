@@ -19,21 +19,21 @@ class ExampleController extends Controller
 
     public function jsonReport(Request $request)
     {
-        $report = new ExampleReport();
+        $report = new ExampleReport($request->toArray());
 
         return $report->json();
     }
 
     public function htmlReport(Request $request)
     {
-        $report = new ExampleReport();
+        $report = new ExampleReport($request->toArray());
 
         return $report->html();
     }
 
     public function csvReport(Request $request)
     {
-        $report = new ExampleReport();
+        $report = new ExampleReport($request->toArray());
 
         return $report->csv();
     }
