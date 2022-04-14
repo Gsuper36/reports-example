@@ -17,7 +17,7 @@ class ExampleQuery
 
     public function results(array $params): Collection
     {
-        $query      = clone $this->builder;
+        $query   = clone $this->builder;
         $filters = $this->filters(
             explode(",", $params["metrics"]) + explode(",", $params["dimensions"])
         );
