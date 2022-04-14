@@ -21,7 +21,7 @@ class ExampleController extends Controller
     {
         $report = new ExampleReport($request->toArray());
 
-        return $report->json();
+        return response($report->json(), 200, ["Content-Type" => "application/json"]);
     }
 
     public function htmlReport(Request $request)
@@ -35,6 +35,6 @@ class ExampleController extends Controller
     {
         $report = new ExampleReport($request->toArray());
 
-        return $report->csv();
+        return response($report->csv(), 200, ["Content-Type" => "text/csv"]);
     }
 }
