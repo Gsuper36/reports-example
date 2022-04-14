@@ -12,11 +12,11 @@ class ExampleQuery
 
     public function __construct()
     {
-        $builder = DB::table("report_data");
+        $this->builder = DB::table("report_data");
     }
 
     public function results(): Collection
     {
-        return $this->builder->all();
+        return $this->builder->get();
     }
 }

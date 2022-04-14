@@ -19,8 +19,8 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "DataStudio\\": "ds",
-            "DataLens": "dl",
-            "Reporting": "reports"
+            "DataLens\\": "dl",
+            "Reporting\\": "reports"
         }
     },
     "autoload-dev": {

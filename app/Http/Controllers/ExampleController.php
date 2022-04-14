@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reports\ExampleReport;
 use Illuminate\Http\Request;
 
 class ExampleController extends Controller
@@ -18,16 +19,22 @@ class ExampleController extends Controller
 
     public function jsonReport(Request $request)
     {
+        $report = new ExampleReport();
 
+        return $report->json();
     }
 
     public function htmlReport(Request $request)
     {
+        $report = new ExampleReport();
 
+        return $report->html();
     }
 
     public function csvReport(Request $request)
     {
+        $report = new ExampleReport();
 
+        return $report->csv();
     }
 }
