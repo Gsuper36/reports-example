@@ -28,7 +28,7 @@ class ExampleController extends Controller
     {
         $report = new ExampleReport($request->toArray());
 
-        return $report->html();
+        return response($report->html());
     }
 
     public function csvReport(Request $request)

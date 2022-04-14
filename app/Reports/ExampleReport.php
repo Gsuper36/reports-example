@@ -39,7 +39,13 @@ class ExampleReport implements Report, JsonableReport, HtmlableReport, CsvableRe
 
     public function html(): string
     {
-        return "";
+        return view(
+            "example_report",
+            [
+                "title" => $this->title(),
+                "items" => $this->data()
+            ]
+        )->render();
     }
 
     public function csv(): string
