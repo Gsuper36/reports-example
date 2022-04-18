@@ -8,6 +8,18 @@ use Illuminate\Support\Str;
 
 class ReportDataSeeder extends Seeder
 {
+    private array $d1 = [
+        "Value 1",
+        "Value 2",
+        "Value 3"
+    ];
+
+    private array $d2 = [
+        "Green",
+        "Blue",
+        "Red"
+    ];
+
     /**
      * Run the database seeds.
      *
@@ -16,8 +28,8 @@ class ReportDataSeeder extends Seeder
     public function run()
     {
         DB::table("report_data")->insert([
-            "dimension_1" => Str::random(7),
-            "dimension_2" => Str::random(14),
+            "dimension_1" => array_rand(array_flip($this->d1)),
+            "dimension_2" => array_rand(array_flip($this->d2)),
             "dimension_3" => random_int(0, 10)
         ]);
     }
