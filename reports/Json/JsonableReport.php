@@ -1,6 +1,8 @@
 <?php
 
-namespace Reporting;
+namespace Reporting\Json;
+
+use Reporting\Report;
 
 interface JsonableReport extends Report
 {

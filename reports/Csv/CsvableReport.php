@@ -1,6 +1,8 @@
 <?php
 
-namespace Reporting;
+namespace Reporting\Csv;
+
+use Reporting\Report;
 
 interface CsvableReport extends Report
 {
