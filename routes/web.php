@@ -17,3 +17,6 @@ $router->get("/json-report", "ExampleController@jsonReport");
 $router->get("/html-report", "ExampleController@htmlReport");
 $router->get("/csv-report", "ExampleController@csvReport");
 $router->get("/chartable", "ExampleController@chartReport");
+$router->get("/ds/csv", "GdsController@csv");
+$router->get("/ds/json", "GdsController@json");
+$router->get("/ds/schema", "GdsController@schema");
