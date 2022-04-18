@@ -3,9 +3,9 @@
 namespace App\Reports;
 
 use App\Queries\ExampleQuery;
-use Reporting\CsvableReport;
-use Reporting\HtmlableReport;
-use Reporting\JsonableReport;
+use Reporting\Csv\CsvableReport;
+use Reporting\Html\HtmlableReport;
+use Reporting\Json\JsonableReport;
 use Reporting\Report;
 
 class ExampleReport implements Report, JsonableReport, HtmlableReport, CsvableReport
@@ -25,6 +25,10 @@ class ExampleReport implements Report, JsonableReport, HtmlableReport, CsvableRe
         return $this->title;
     }
 
+    /**
+     *
+     * @return array<string,StdClass>
+     */
     public function data(): array
     {
         return $this->query
