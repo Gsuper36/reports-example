@@ -27,10 +27,12 @@ class ReportDataSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("report_data")->insert([
-            "dimension_1" => array_rand(array_flip($this->d1)),
-            "dimension_2" => array_rand(array_flip($this->d2)),
-            "dimension_3" => random_int(0, 10)
-        ]);
+        for ($i = 0; $i <= 10000; $i++) {
+            DB::table("report_data")->insert([
+                "dimension_1" => array_rand(array_flip($this->d1)),
+                "dimension_2" => array_rand(array_flip($this->d2)),
+                "dimension_3" => random_int(0, 10)
+            ]);
+        }
     }
 }
